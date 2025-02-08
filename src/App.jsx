@@ -6,10 +6,6 @@ import Grid2 from '@mui/material/Grid2';
 import CardContainer from './components/Card';
 import * as contentList from './data/home_content_v1.json';
 import './App.css'
-//TODO:
-// Create a request for portfolio data 
-// Create a secret second route to submit portfolio data
-// Dont forget to host the portfolio site once the bare minimum is complete
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
