@@ -5,13 +5,15 @@ import Section from './components/Section';
 import Grid2 from '@mui/material/Grid2';
 import CardContainer from './components/Card';
 import * as contentList from './data/home_content_v1.json';
+import ResponsiveAppBar from './components/Appbar';
 import './App.css'
+
 //TODO:
 // Create a request for portfolio data 
 // Create a secret second route to submit portfolio data
 // Dont forget to host the portfolio site once the bare minimum is complete
 
-function App() {
+const App = () => {
   const [darkMode, setDarkMode] = useState(false)
   useEffect(() => {
     let root = document.documentElement;
@@ -27,17 +29,18 @@ function App() {
 
   return (
     <Grid2> 
-      <Switch
-      color={darkMode ? 'primary' : 'danger'}
-      slotProps={{ input: { 'aria-label': 'dark mode' } }}
-      startDecorator={<></>}
-      endDecorator={<></> }
-      checked={darkMode}
-      onChange={(event) =>
-        setDarkMode(event.target.checked)
-      }
-      />
       <Grid2>
+        <Switch
+        color={darkMode ? 'primary' : 'danger'}
+        slotProps={{ input: { 'aria-label': 'dark mode' } }}
+        startDecorator={<></>}
+        endDecorator={<></> }
+        checked={darkMode}
+        onChange={(event) =>
+          setDarkMode(event.target.checked)
+        }
+        />
+        <ResponsiveAppBar/>
         <Section headerText={contentList.sections[0]} direction='column'>
           <p>My name is Kaia, I am a software engineer who really enjoys cornmeal porridge and riding my bike </p>
         </Section>

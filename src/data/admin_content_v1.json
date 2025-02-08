@@ -1,0 +1,52 @@
+{
+    "sections": [
+      {
+        "title": {
+          "text": "Formfolio Admin Page",
+          "variant": "h3"
+        },
+        "subtitle": {
+          "text": "Edit the portfolio without touching any code!",
+          "variant": "h5"
+        }
+      }
+    ],
+    "projects": [
+      {
+        "title": "Project One",
+        "subtitle": "",
+        "image": "",
+        "bodytext": "",
+        "footertext": ""
+      },
+      {
+        "title": "Project Two",
+        "subtitle": "",
+        "image": "",
+        "bodytext": "",
+        "footertext": ""
+      },
+      {
+        "title": "Project Three",
+        "subtitle": "",
+        "image": "",
+        "bodytext": "",
+        "footertext": ""
+      },
+      {
+        "title": "Project Four",
+        "subtitle": "",
+        "image": "",
+        "bodytext": "",
+        "footertext": ""
+      },
+      {
+        "title": "Project Five",
+        "subtitle": "",
+        "image": "",
+        "bodytext": "",
+        "footertext": ""
+      }
+    ]
+  }
+  
