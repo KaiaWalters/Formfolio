@@ -5,10 +5,12 @@ import * as contentList from '../data/admin_content_v1.json';
 import '../App.css'
 
 const AdminHomePage = () => {
-
   return (
     <Grid2>
       <Section headerText={contentList.sections[0]}>
+        <span>
+          Hello I am the admin page!
+        </span>
       </Section>
     </Grid2>
   )

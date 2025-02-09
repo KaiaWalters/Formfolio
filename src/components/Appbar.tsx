@@ -12,12 +12,15 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { Link } from 'react-router';
-import { Outlet } from 'react-router';
-const pages = [{route: "/", title:'Formfolio'}, {route: "/admin", title:'Admin'}];
+import { Link } from 'react-router-dom';
+import Switch from '@mui/joy/Switch';
+import { useState } from 'react'
+import {useEffect} from 'react'
+
+const pages = [{route: '/home', title:'Home'}, {route: '/admin', title:'Admin'}];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-function ResponsiveAppBar() {
+let ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
@@ -46,7 +49,7 @@ function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -59,7 +62,6 @@ function ResponsiveAppBar() {
           >
             LOGO
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -70,7 +72,7 @@ function ResponsiveAppBar() {
               color="inherit"
             >
               <MenuIcon />
-            </IconButton>
+            </IconButton>           
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -87,19 +89,17 @@ function ResponsiveAppBar() {
               onClose={handleCloseNavMenu}
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
-            {/* {pages.map((page, index) => (
-                <Link key={index} to={page.route}><Typography sx={{ textAlign: 'center' }}>{page.title}</Typography></Link>
-            ))} */}
-
-            <MenuItem component={Link} to="/">
-                <Typography sx={{ textAlign: 'center' }}>Home</Typography>
-            </MenuItem>
-
-            <MenuItem component={Link} to="/admin">
-                <Typography sx={{ textAlign: 'center' }}>Admin</Typography>
-            </MenuItem>
+            {pages.map((page, index) => {
+                const {title, route } = page
+                return (
+                  <MenuItem key={index}>
+                    <Link to={route} >
+                      {title}
+                    </Link>
+                  </MenuItem>
+                )
+             })}
             </Menu>
-            <Outlet/>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
@@ -127,11 +127,14 @@ function ResponsiveAppBar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page.title}
+                <Link style={{textDecoration: "none", color: "white"}} to={page.route}>
+                  {page.title}
+                </Link>
               </Button>
             ))}
           </Box>
           <Box sx={{ flexGrow: 0 }}>
+            <DarkSwitch/>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -164,6 +167,33 @@ function ResponsiveAppBar() {
       </Container>
     </AppBar>
   );
+}
+
+const DarkSwitch = () => {
+  const [darkMode, setDarkMode] = useState(false)
+  useEffect(() => {
+    let root = document.documentElement;
+    if(darkMode){
+      root.style.setProperty('background-color', "black");
+      root.style.setProperty('color', 'white')
+    }else {
+      root.style.setProperty('background-color', "#1E8FD5");
+      root.style.setProperty('color', 'white')
+    } 
+  }, [darkMode])
+
+  return (
+    <Switch
+    color={darkMode ? 'primary' : 'danger'}
+    slotProps={{ input: { 'aria-label': 'dark mode' } }}
+    startDecorator={<>LIGHT</>}
+    endDecorator={<>DARK</> }
+    checked={darkMode}
+    onChange={(event) =>
+      setDarkMode(event.target.checked)
+    }
+    />
+  )
 }
 
 export default ResponsiveAppBar;

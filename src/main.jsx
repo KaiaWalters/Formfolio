@@ -1,25 +1,16 @@
-import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { StrictMode } from "react";
+import * as ReactDOMClient from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
-import AdminHomePage from './pages/Admin.js';
 
+const rootElement = document.getElementById("root");
+const root = ReactDOMClient.createRoot(rootElement);
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App/>,
-    children: [
-      {
-        path: "/admin",
-        element: <AdminHomePage/>,
-      }
-    ]}
-]);
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+root.render(
+  <StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </StrictMode>
 );
