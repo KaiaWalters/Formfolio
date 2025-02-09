@@ -10,7 +10,7 @@ const Layout = () => {
     <>
       <ResponsiveAppBar />
       <div style = {{ 
-        marginTop: '64px',
+        marginTop: '72px',
         padding: '16px' 
       }}>
         <Outlet />
