@@ -9,8 +9,14 @@ const Layout = () => {
   return (
     <>
       <ResponsiveAppBar />
-      <Outlet />
+      <div style = {{ 
+        marginTop: '64px',
+        padding: '16px' 
+      }}>
+        <Outlet />
+      </div>
     </>
+   
   );
 };
 
