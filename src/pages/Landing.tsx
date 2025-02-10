@@ -1,16 +1,15 @@
 import React from 'react'
-import {Button} from '@mui/material'
 import {Box} from '@mui/material'
+import CustomButton from '../components/Button'
 import Section from '../components/Section'
 import * as landingContent from '../data/landing_content_v1.json'
 
 const LandingPage = () => {
+
     return (
         <Box alignContent={'center'}>
             <Section headerText={landingContent.sections[0]}>
-                <Button href={`/home`}>
-                    Learn More
-                </Button>
+                <CustomButton title={'Learn More'} to={'/home'}/>
             </Section>
                 {
                     landingContent.social.map((social, index) => {

@@ -23,13 +23,13 @@ const Layout = () => {
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<LandingPage />} />
-          <Route path="/admin" element={<AdminHomePage />} />
-          <Route path="/home" element={<HomePage />} />
-        </Route>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<LandingPage />} />
+            <Route path="/admin" element={<AdminHomePage />} />
+            <Route path="/home" element={<HomePage />} />
+          </Route>
+        </Routes>
     </>
   )
 }

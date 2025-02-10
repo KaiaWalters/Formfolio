@@ -9,7 +9,7 @@ const AdminHomePage = () => {
         <Grid2> 
           <Grid2>
             <Section headerText={contentList.sections[0]}>
-              <p>My name is Kaia, I am a software engineer who really enjoys cornmeal porridge and riding my bike </p>
+              <p>What is my story?</p>
             </Section>
     
             <Section headerText={contentList.sections[1]}>

@@ -7,13 +7,11 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
-import Switch from '@mui/joy/Switch';
+import Switch from '@mui/material/Switch';
 import { useState } from 'react'
 import {useEffect} from 'react'
 
@@ -41,7 +39,7 @@ let ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar position="fixed" >
+    <AppBar position="fixed">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -135,11 +133,6 @@ let ResponsiveAppBar = () => {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <DarkSwitch/>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -169,6 +162,7 @@ let ResponsiveAppBar = () => {
   );
 }
 
+
 const DarkSwitch = () => {
   const [darkMode, setDarkMode] = useState(false)
   useEffect(() => {
@@ -184,10 +178,10 @@ const DarkSwitch = () => {
 
   return (
     <Switch
-    color={darkMode ? 'primary' : 'danger'}
+    color={darkMode ? 'secondary' : 'primary'}
     slotProps={{ input: { 'aria-label': 'dark mode' } }}
-    startDecorator={<>LIGHT</>}
-    endDecorator={<>DARK</> }
+    startDecorator={<></>}
+    endDecorator={<></> }
     checked={darkMode}
     onChange={(event) =>
       setDarkMode(event.target.checked)
