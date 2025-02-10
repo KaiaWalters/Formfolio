@@ -34,9 +34,9 @@
   "projects": [
     {
       "title": "Project One",
-      "subtitle": "",
-      "image": "",
-      "bodytext": "",
+      "subtitle": "A project built to accomplish a task",
+      "image": "/images/snowypeaks.jpg",
+      "bodytext": "This project was built using Typescript, Next.js, React, Mongodb, etc.",
       "footertext": ""
     },
     {
