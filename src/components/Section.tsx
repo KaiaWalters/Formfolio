@@ -3,7 +3,23 @@ import * as React from 'react';
 import Grid2 from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 
-const Section = ({children, headerText}) => {
+
+interface SectionProps {
+  children?: JSX.Element;
+  headerText: {
+    title: {
+      text: string;
+      variant: string;
+    }; 
+    subtitle: {
+      text: string;
+      variant: string;
+    }; 
+  }
+}
+
+
+const Section = ({children, headerText} : SectionProps) => {
   return(
     <Grid2 container direction={'column'}  spacing={3} padding={2}>
      <SectionHeading title={headerText.title} subtitle={headerText.subtitle}/>

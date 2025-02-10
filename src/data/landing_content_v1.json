@@ -1,0 +1,44 @@
+{
+ "sections": [
+    {
+        "title": {
+          "text": "Kaia Walters",
+          "variant": "h1"
+        },
+        "subtitle": {
+          "text": "Software Engineer",
+          "variant": "h2"
+        }
+      },
+    {
+      "title": {
+        "text": "Follow me on the web",
+        "variant": "h4"
+      },
+      "subtitle": {
+        "text": "",
+        "variant": ""
+      }
+    }
+  ], 
+
+  "social": [
+    {
+        "icon": "", 
+        "link": "bluesky.social"
+    }, 
+    {
+        "icon": "", 
+        "link": "http://Linkedin.com/ln/kaiawalters"
+    }, 
+    {
+        "icon": "", 
+        "link": "http://github.com/kaiawalters"
+    }, 
+    {
+        "icon": "", 
+        "link": "kaiac.walters@gmail.com"
+    }
+
+  ]
+}

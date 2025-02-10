@@ -1,52 +1,37 @@
-import { useState } from 'react'
-import {useEffect} from 'react'
-import Switch from '@mui/joy/Switch';
-import Section from './components/Section';
-import Grid2 from '@mui/material/Grid2';
-import CardContainer from './components/Card';
-import * as contentList from './data/home_content_v1.json';
-import './App.css'
+import ResponsiveAppBar from './components/Appbar';
+import { Outlet, Route, Routes } from 'react-router';
+import AdminHomePage from './pages/Admin';
+import HomePage from './pages/Home'
+import LandingPage from './pages/Landing';
+import './css/App.css'
+import './css/snow.css'
 
-function App() {
-  const [darkMode, setDarkMode] = useState(false)
-  useEffect(() => {
-    let root = document.documentElement;
-    if(darkMode){
-      root.style.setProperty('background-color', "black");
-      root.style.setProperty('color', 'white')
-    }else {
-      root.style.setProperty('background-color', "white");
-      root.style.setProperty('color', '#0067A5')
-    } 
-  }, [darkMode])
-  
-
+const Layout = () => {
   return (
-    <Grid2> 
-      <Switch
-      color={darkMode ? 'primary' : 'danger'}
-      slotProps={{ input: { 'aria-label': 'dark mode' } }}
-      startDecorator={<></>}
-      endDecorator={<></> }
-      checked={darkMode}
-      onChange={(event) =>
-        setDarkMode(event.target.checked)
-      }
-      />
-      <Grid2>
-        <Section headerText={contentList.sections[0]} direction='column'>
-          <p>My name is Kaia, I am a software engineer who really enjoys cornmeal porridge and riding my bike </p>
-        </Section>
+    <>
+      <ResponsiveAppBar />
+      <div style = {{ 
+        marginTop: '72px',
+        padding: '16px' 
+      }}>
+        <Outlet />
+      </div>
+    </>
+   
+  );
+};
 
-        <Section headerText={contentList.sections[1]} direction='column'>
-          <CardContainer projectList={contentList.projects}/>
-        </Section>
-
-        <Section headerText={contentList.sections[2]} direction='column'>
-          <p>This is the third section.</p>
-        </Section>
-      </Grid2>
-    </Grid2>
+const App = () => {
+  return (
+    <div>
+        <Routes>
+           <Route path="/" element={<Layout />}>
+            <Route index element={<LandingPage />} />
+            <Route path="/admin" element={<AdminHomePage />} />
+            <Route path="/home" element={<HomePage />} />
+          </Route>
+        </Routes>
+    </div>
   )
 }
 
