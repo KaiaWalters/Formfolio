@@ -13,7 +13,7 @@ root.render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <App />
+        <App/>
       </BrowserRouter>
     </ThemeProvider>
   </StrictMode>
