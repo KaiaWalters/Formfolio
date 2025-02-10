@@ -9,7 +9,7 @@ const CardContainer = ({projectList}) => {
                <Grid2 key={index} size={{ xs: 12, md: 4, lg: 4 }}>
                  <h3>{project.title}</h3>
                  <p>{project.subtitle}</p>
-                 <img src={project.image} alt={project.title} />
+                 <img style={{width:'200px', height:'150px'}} src={project.image} alt={project.title} />
                  <p>{project.bodytext}</p>
                  <p>{project.footertext}</p>
                </Grid2>

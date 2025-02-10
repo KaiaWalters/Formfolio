@@ -41,30 +41,30 @@
     },
     {
       "title": "Project Two",
-      "subtitle": "",
-      "image": "",
-      "bodytext": "",
+      "subtitle": "A project built to accomplish a task",
+      "image": "/images/snowypeaks.jpg",
+      "bodytext": "This project was built using Typescript, Next.js, React, Mongodb, etc.",
       "footertext": ""
     },
     {
       "title": "Project Three",
-      "subtitle": "",
-      "image": "",
-      "bodytext": "",
+      "subtitle": "A project built to accomplish a task",
+      "image": "/images/snowypeaks.jpg",
+      "bodytext": "This project was built using Typescript, Next.js, React, Mongodb, etc.",
       "footertext": ""
     },
     {
       "title": "Project Four",
-      "subtitle": "",
-      "image": "",
-      "bodytext": "",
+      "subtitle": "A project built to accomplish a task",
+      "image": "/images/snowypeaks.jpg",
+      "bodytext": "This project was built using Typescript, Next.js, React, Mongodb, etc.",
       "footertext": ""
     },
     {
       "title": "Project Five",
-      "subtitle": "",
-      "image": "",
-      "bodytext": "",
+      "subtitle": "A project built to accomplish a task",
+      "image": "/images/snowypeaks.jpg",
+      "bodytext": "This project was built using Typescript, Next.js, React, Mongodb, etc.",
       "footertext": ""
     }
   ]
